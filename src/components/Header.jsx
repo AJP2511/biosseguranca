@@ -7,16 +7,13 @@ import {
 } from "../styles/components/Header.styled";
 import { FaBiohazard, FaBars, FaWindowClose } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import { GlobalContext } from "../context/GlobalContext";
 
 const Header = () => {
-  const [isOpened, setIsOpened] = React.useState(false);
+  const { isOpened, setIsOpened } = React.useContext(GlobalContext);
 
   const handleMenu = () => {
     setIsOpened(!isOpened);
-  };
-
-  const handleCloseMenu = () => {
-    setIsOpened(false);
   };
 
   return (
@@ -33,15 +30,9 @@ const Header = () => {
         </NavLink>
       </TextContainer>
       <NavContainer opened={isOpened}>
-        <NavLink to="/page1" onClick={handleCloseMenu}>
-          Página 1
-        </NavLink>
-        <NavLink to="/page2" onClick={handleCloseMenu}>
-          Página 2
-        </NavLink>
-        <NavLink to="/page3" onClick={handleCloseMenu}>
-          Página 3
-        </NavLink>
+        <NavLink to="/page1">Página 1</NavLink>
+        <NavLink to="/page2">Página 2</NavLink>
+        <NavLink to="/page3">Página 3</NavLink>
       </NavContainer>
     </MainContainer>
   );

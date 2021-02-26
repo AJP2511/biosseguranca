@@ -25,46 +25,37 @@ export const IconContainer = styled.div`
 export const TextContainer = styled.div``;
 
 export const NavContainer = styled.nav`
-  backdrop-filter: blur(1.5px);
+  backdrop-filter: blur(10px);
   position: absolute;
   top: 50px;
   left: 0px;
   display: flex;
   flex-direction: column;
-  width: 120px;
-  transition: all .4s ease;
-  transform: translateX(-100px);
+  width: 150px;
+  transition: all 0.4s ease;
+
   align-items: center;
   padding: 1.5rem;
   height: calc(100vh - 50px);
 
-  &:hover{
-    transform: translateX(0)
-  }
-
-  &::after{
-    content:"";
-    width:20px;
-    height:100%;
-    background-color: ${(props) => props.theme.secondary};
+  &::after {
+    content: "";
+    width: 5px;
+    height: 100%;
+    background-color: black;
     position: absolute;
-    right:0;
+    right: 0;
     top: 0;
   }
 
-
-
-  @media(max-width: 720px){
+  @media (max-width: 720px) {
     width: 100%;
     transform: ${(props) =>
       props.opened ? "translateX(0)" : "translateX(-740px)"};
     font-size: 2rem;
-
-      &:hover{
-        transform: none;
-      }
   }
-  
 
+  a {
+    margin: 0.5rem;
   }
 `;
