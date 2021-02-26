@@ -15,6 +15,10 @@ const Header = () => {
     setIsOpened(!isOpened);
   };
 
+  const handleCloseMenu = () => {
+    setIsOpened(false);
+  };
+
   return (
     <MainContainer>
       <IconContainer onClick={handleMenu}>
@@ -29,9 +33,15 @@ const Header = () => {
         </NavLink>
       </TextContainer>
       <NavContainer opened={isOpened}>
-        <NavLink to="/page1">Página 1</NavLink>
-        <NavLink to="/page2">Página 2</NavLink>
-        <NavLink to="/page3">Página 3</NavLink>
+        <NavLink to="/page1" onClick={handleCloseMenu}>
+          Página 1
+        </NavLink>
+        <NavLink to="/page2" onClick={handleCloseMenu}>
+          Página 2
+        </NavLink>
+        <NavLink to="/page3" onClick={handleCloseMenu}>
+          Página 3
+        </NavLink>
       </NavContainer>
     </MainContainer>
   );
