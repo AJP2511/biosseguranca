@@ -24,7 +24,7 @@ const Header = () => {
         <NavLink to="/" exact>
           <p>
             <FaBiohazard />
-            Biossegurança
+            Biossegurança RAD15-N
           </p>
         </NavLink>
       </TextContainer>
